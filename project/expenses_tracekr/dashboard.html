@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartSpend Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <a href="index.html" class="text-lg font-bold text-green-600">← Home</a>
+    <h1 class="text-2xl font-semibold">SmartSpend Dashboard</h1>
+    <span id="user-info" class="text-sm text-gray-600"></span> <!-- Display User Info -->
+  </nav>
+
+  <!-- Main Dashboard -->
+  <main class="max-w-6xl mx-auto py-10 px-4 grid gap-8 md:grid-cols-2">
+
+    <!-- Wallet -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">💳 Wallet</h2>
+      <p class="text-gray-700 text-lg">Total Balance: <span id="wallet-balance" class="font-bold">₹12,500</span></p>
+      <p class="text-sm text-gray-500">Last Updated: <span id="wallet-update">Today</span></p>
+    </section>
+
+    <!-- Income Overview -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">📈 Income This Month</h2>
+      <p class="text-gray-700 text-lg">Total: <span class="font-bold">₹25,000</span></p>
+      <ul class="mt-2 text-sm text-gray-600 list-disc pl-5">
+        <li>Salary - ₹20,000</li>
+        <li>Freelancing - ₹5,000</li>
+      </ul>
+    </section>
+
+    <!-- Expenses Overview -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">📉 Expenses</h2>
+      <p class="text-gray-700 text-lg">Total: <span id="expenses-total" class="font-bold">₹12,500</span></p>
+    </section>
+
+    <!-- Add Daily Income -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">➕ Add Today's Income</h2>
+      <form id="income-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Source</label>
+          <input type="text" id="income-source" class="mt-1 w-full p-2 border border-gray-300 rounded" placeholder="e.g., Freelancing" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Amount (₹)</label>
+          <input type="number" id="income-amount" class="mt-1 w-full p-2 border border-gray-300 rounded" placeholder="e.g., 1000" required>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add Income</button>
+      </form>
+    </section>
+
+    <!-- Daily Income List -->
+    <section class="md:col-span-2 bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+      <h2 class="text-xl font-bold text-green-600 mb-3">📅 Daily Income Log</h2>
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b text-gray-700">
+            <th class="py-2">Date</th>
+            <th>Source</th>
+            <th>Amount (₹)</th>
+          </tr>
+        </thead>
+        <tbody id="income-log">
+          <tr class="border-b">
+            <td class="py-2">2025-05-22</td>
+            <td>Online Tutoring</td>
+            <td>₹1,200</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2">2025-05-23</td>
+            <td>Bonus</td>
+            <td>₹500</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Monthly Budget Section -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">🎯 Set Monthly Budget</h2>
+      <input
+        type="number"
+        id="monthly-budget-input"
+        class="w-full p-2 border border-gray-300 rounded mb-3"
+        placeholder="Enter your monthly budget (₹)"
+        min="0"
+        step="0.01"
+      />
+      <button id="save-budget-btn" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+        Save Budget
+      </button>
+      <p id="budget-alert" class="mt-3 text-red-600 font-semibold" style="display:none;"></p>
+    </section>
+
+    <!-- Add Daily Expense -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold text-green-600 mb-3">➖ Add Today's Expense</h2>
+      <form id="expense-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Category</label>
+          <input type="text" id="expense-category" class="mt-1 w-full p-2 border border-gray-300 rounded" placeholder="e.g., Groceries" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Amount (₹)</label>
+          <input type="number" id="expense-amount" class="mt-1 w-full p-2 border border-gray-300 rounded" placeholder="e.g., 500" required>
+        </div>
+        <button type="submit" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Expense Log Table -->
+    <section class="md:col-span-2 bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+      <h2 class="text-xl font-bold text-green-600 mb-3">🧾 Expense Log</h2>
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b text-gray-700">
+            <th class="py-2">Date</th>
+            <th>Category</th>
+            <th>Amount (₹)</th>
+          </tr>
+        </thead>
+        <tbody id="expense-log">
+          <tr class="border-b">
+            <td class="py-2">2025-05-01</td>
+            <td>Food</td>
+            <td>₹3000</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2">2025-05-03</td>
+            <td>Transport</td>
+            <td>₹2000</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2">2025-05-10</td>
+            <td>Utilities</td>
+            <td>₹2500</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2">2025-05-15</td>
+            <td>Other</td>
+            <td>₹5000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script>
+  // ✅ Check if user is logged in
+  fetch('http://localhost:3000/getUser', {
+    credentials: 'include'
+  })
+  .then(res => {
+    if (!res.ok) throw new Error('Unauthorized');
+    return res.json();
+  })
+  // .then(user => {
+  //   document.getElementById('user-info').textContent = `Welcome, ${user.name || user.email}`;
+  // })
+  // .catch(() => {
+  //   alert('You must be logged in to access the dashboard.');
+  //   window.location.href = 'login.html';
+  // });
+
+  // ---------- LocalStorage Helpers ----------
+  const getIncomeData = () => JSON.parse(localStorage.getItem('incomeLog')) || [];
+  const saveIncomeData = data => localStorage.setItem('incomeLog', JSON.stringify(data));
+
+  const getExpenseData = () => JSON.parse(localStorage.getItem('expenseLog')) || [];
+  const saveExpenseData = data => localStorage.setItem('expenseLog', JSON.stringify(data));
+
+  // ---------- Populate Logs from LocalStorage ----------
+  function loadLogs() {
+    const incomeData = getIncomeData();
+    const expenseData = getExpenseData();
+
+    const incomeLog = document.getElementById('income-log');
+    incomeLog.innerHTML = '';
+    incomeData.forEach(entry => {
+      const row = `<tr class="border-b"><td class="py-2">${entry.date}</td><td>${entry.source}</td><td>₹${entry.amount.toFixed(2)}</td></tr>`;
+      incomeLog.insertAdjacentHTML('beforeend', row);
+    });
+
+    const expenseLog = document.getElementById('expense-log');
+    expenseLog.innerHTML = '';
+    let total = 0;
+    expenseData.forEach(entry => {
+      const row = `<tr class="border-b"><td class="py-2">${entry.date}</td><td>${entry.category}</td><td>₹${entry.amount.toFixed(2)}</td></tr>`;
+      expenseLog.insertAdjacentHTML('beforeend', row);
+      total += entry.amount;
+    });
+
+    document.getElementById('expenses-total').textContent = `₹${total.toFixed(2)}`;
+    expenseTotal = total;
+    checkBudget();
+  }
+
+  // ---------- Income Form ----------
+  document.getElementById('income-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const source = document.getElementById('income-source').value.trim();
+    const amount = parseFloat(document.getElementById('income-amount').value);
+    if (!source || isNaN(amount) || amount <= 0) return alert("Invalid input");
+
+    const today = new Date().toISOString().slice(0, 10);
+    const entry = { date: today, source, amount };
+    const data = getIncomeData();
+    data.push(entry);
+    saveIncomeData(data);
+    loadLogs();
+    this.reset();
+  });
+
+  // ---------- Expense Form ----------
+  let expenseTotal = 0;
+  document.getElementById('expense-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const category = document.getElementById('expense-category').value.trim();
+    const amount = parseFloat(document.getElementById('expense-amount').value);
+    if (!category || isNaN(amount) || amount <= 0) return alert("Invalid input");
+
+    const today = new Date().toISOString().slice(0, 10);
+    const entry = { date: today, category, amount };
+    const data = getExpenseData();
+    data.push(entry);
+    saveExpenseData(data);
+    loadLogs();
+    this.reset();
+  });
+
+  // ---------- Budget Logic ----------
+  const budgetInput = document.getElementById('monthly-budget-input');
+  const saveBudgetBtn = document.getElementById('save-budget-btn');
+  const budgetAlert = document.getElementById('budget-alert');
+  let monthlyBudget = parseFloat(localStorage.getItem('monthlyBudget')) || 0;
+  if (monthlyBudget > 0) budgetInput.value = monthlyBudget;
+
+  function checkBudget() {
+    if (monthlyBudget > 0 && expenseTotal > monthlyBudget) {
+      budgetAlert.style.display = 'block';
+      budgetAlert.textContent = `⚠️ Over budget by ₹${(expenseTotal - monthlyBudget).toFixed(2)}!`;
+    } else {
+      budgetAlert.style.display = 'none';
+    }
+  }
+
+  saveBudgetBtn.addEventListener('click', () => {
+    const val = parseFloat(budgetInput.value);
+    if (isNaN(val) || val <= 0) return alert('Enter a valid budget.');
+    monthlyBudget = val;
+    localStorage.setItem('monthlyBudget', monthlyBudget);
+    alert(`Monthly budget set to ₹${monthlyBudget.toFixed(2)}`);
+    checkBudget();
+  });
+
+  // ---------- Load Everything on Page Load ----------
+  loadLogs();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SmartSpend</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-green-50 via-blue-50 to-purple-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-md">
+   <div class="mb-8 text-center">
+  <img src="https://play-lh.googleusercontent.com/s9XeqgR8NIwNlh9y9898Cz6b9OT6txXtg7Vv9gKdgeeAB2exczw1cgbywdolGa3T"
+       class="mx-auto mb-2 w-20 h-20 object-contain"
+       alt="SmartSpend Logo">
+  <h2 class="text-3xl font-bold text-gray-800">Welcome Back</h2>
+  <p class="text-gray-500">Log in to your SmartSpend account</p>
+</div>
+
+   <form id="loginForm" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" name="email"placeholder="you@example.com" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" name="password" placeholder="••••••••" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500">
+      </div>
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition">
+        Log In
+      </button>
+    </form>
+    <p class="text-center text-sm text-gray-500 mt-6">
+      Don’t have an account?
+      <a href="signup.html" class="text-green-600 hover:text-green-700 font-semibold">Sign up</a>
+    </p>
+  </div><script>
+  document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    try {
+      const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert('Login successful!');
+         window.location.href = 'index.html'; 
+        // You can redirect here
+        // window.location.href = 'dashboard.html';
+      } else {
+        alert(data.error || 'Login failed');
+      }
+    } catch (err) {
+      alert('Something went wrong.');
+      console.error(err);
+    }
+  });
+</script>
+
+</body>
+</html>

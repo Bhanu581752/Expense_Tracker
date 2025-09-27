@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartSpend - Simplified Expense Tracking</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-to-br from-indigo-50 via-green-50 to-teal-100 min-h-screen font-sans">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-white shadow-lg">
+    <div class="flex items-center space-x-3">
+      <img src="https://play-lh.googleusercontent.com/s9XeqgR8NIwNlh9y9898Cz6b9OT6txXtg7Vv9gKdgeeAB2exczw1cgbywdolGa3T" alt="SmartSpend Logo" class="w-10 h-10" />
+      <h1 class="text-2xl font-extrabold text-gray-800">SmartSpend</h1>
+    </div>
+    <nav class="space-x-6">
+   
+      <!-- <a href="login.html"
+        class="bg-green-500 text-white px-5 py-2 rounded-full hover:bg-green-600 font-semibold transition">Login</a> -->
+       <a href="dashboard.html" class="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow-md transition">Go to Dashboard</a>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-16 gap-16">
+    <!-- Left Content -->
+    <div class="flex-1 max-w-xl space-y-6">
+      <h2 class="text-5xl font-extrabold text-gray-800 leading-tight">
+        Track Expenses, <br />
+        <span class="text-green-600">Master Finances</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Join thousands of smart users managing their spending with ease. SmartSpend helps you visualize, track, and optimize your financial life using AI-powered analytics.
+      </p>
+      <a href="expence.html">
+  <button
+    class="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-7 py-3 rounded-full shadow-xl hover:shadow-2xl hover:from-green-500 hover:to-emerald-600 transition">
+    Start Tracking 
+  </button>
+</a>
+
+      <div class="flex items-center mt-6">
+        <div class="flex -space-x-3">
+          <img src="https://i.pravatar.cc/32?img=5" class="w-9 h-9 rounded-full border-2 border-white" />
+          <img src="https://i.pravatar.cc/32?img=8" class="w-9 h-9 rounded-full border-2 border-white" />
+          <img src="https://i.pravatar.cc/32?img=15" class="w-9 h-9 rounded-full border-2 border-white" />
+        </div>
+        <span class="ml-3 bg-green-100 text-green-800 text-sm font-semibold px-2 py-1 rounded-full">20+ users</span>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex-1 relative w-full max-w-sm">
+      <img src="https://cdn.dribbble.com/userupload/4288318/file/original-73288197e9d98c95006e258d3ab69325.png?format=webp&resize=400x300&vertical=center"
+        alt="App UI" class="rounded-xl shadow-2xl w-full" />
+
+      <!-- Floating cards -->
+      <div class="absolute top-2 left-0 lg:-left-24 bg-white p-4 rounded-lg shadow-xl w-40">
+        <p class="font-medium text-sm text-gray-600">Groceries</p>
+        <p class="text-red-500 font-bold">- $45.99</p>
+      </div>
+      <div class="absolute top-32 left-0 lg:-left-24 bg-white p-4 rounded-lg shadow-xl w-40">
+        <p class="font-medium text-sm text-gray-600">Entertainment</p>
+        <p class="text-red-500 font-bold">- $29.99</p>
+      </div>
+      <div class="absolute top-5 right-0 lg:-right-28 bg-white p-4 rounded-lg shadow-xl w-40">
+        <p class="font-medium text-sm text-gray-600">Salary</p>
+        <p class="text-green-600 font-bold">+ $1,200.00</p>
+      </div>
+      <div class="absolute top-40 right-0 lg:-right-28 bg-white p-4 rounded-lg shadow-xl w-40">
+        <p class="font-medium text-sm text-gray-600">Extra Income</p>
+        <p class="text-green-600 font-bold">+ $1,600.00</p>
+      </div>
+    </div>
+  </section>
+
+
+<!-- About Section -->
+<section class="bg-white py-16 px-6 lg:px-20">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl font-bold text-gray-800 mb-6">About SmartSpend</h3>
+    <p class="text-gray-600 text-lg leading-relaxed">
+      SmartSpend is your AI-powered personal finance assistant, designed to help you manage expenses effortlessly. With real-time insights, visual tracking tools, and a user-friendly interface, SmartSpend empowers users to make smarter financial decisions and achieve their savings goals. Whether you're budgeting monthly groceries or tracking your income, SmartSpend keeps you informed and in control.
+    </p>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-gradient-to-br from-green-50 via-white to-teal-50 px-6 lg:px-20">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
+    
+    <!-- Graph Image -->
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Graph overview" class="max-w-full h-auto rounded-lg shadow-lg" />
+    </div>
+    
+    <!-- Features Text -->
+    <div class="w-full md:w-1/2">
+      <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center md:text-left">Why Choose SmartSpend?</h3>
+      
+      <div class="grid gap-6">
+        <div class="flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a4 4 0 01-4-4V7a4 4 0 118 0v6a4 4 0 01-4 4z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8" />
+          </svg>
+          <div>
+            <h4 class="text-xl font-semibold text-green-600 mb-1">AI-Powered Analytics</h4>
+            <p class="text-gray-600">SmartSpend analyzes your spending patterns and suggests budget improvements using intelligent insights.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12h.01" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+            <h4 class="text-xl font-semibold text-green-600 mb-1">Real-Time Tracking</h4>
+            <p class="text-gray-600">Track your expenses and income instantly across devices and categories.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l2-2 4 4" />
+          </svg>
+          <div>
+            <h4 class="text-xl font-semibold text-green-600 mb-1">Graphical Overview</h4>
+            <p class="text-gray-600">View beautiful charts and visuals that simplify your financial overview.</p>
+          </div>
+        </div>
+
+        <!-- New Feature 1 -->
+        <div class="flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7m-7-7h14" />
+          </svg>
+          <div>
+            <h4 class="text-xl font-semibold text-green-600 mb-1">Secure & Private</h4>
+            <p class="text-gray-600">Your data is encrypted and safe — privacy is our top priority.</p>
+          </div>
+        </div>
+
+        <!-- New Feature 2 -->
+        <div class="flex items-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <div>
+            <h4 class="text-xl font-semibold text-green-600 mb-1">Cross-Platform Sync</h4>
+            <p class="text-gray-600">Access your financial data seamlessly on mobile, tablet, and desktop devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Team Section -->
+<section class="bg-white py-16 px-6 lg:px-20">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-bold text-gray-800 mb-10">Meet the Team</h3>
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <!-- Team Member 1 -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <img src="https://play-lh.googleusercontent.com/dB871HGe4u27jK6S8WztToQhRyy1Z417PrIKjhcywPAq1P8WO6oc3z25NhoTqdd4K-w=w526-h296-rw" alt="Abhay" class="mx-auto rounded-full w-24 h-24 mb-4" />
+        <h4 class="text-xl font-semibold text-gray-800">Abhay Singh</h4>
+        <p class="text-sm text-green-600">Team Lead & Backend Developer</p>
+        <p class="mt-2 text-gray-600 text-sm italic">"SmartSpend gives users control over their financial life. Proud to lead a passionate team."</p>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <img src="https://play-lh.googleusercontent.com/MG6c3_Zf4q_KWonZp3K2GvWD338KzDzTH8DY-nS4-3G3rS6X7CbbLLNBMTolGVg8ju3F=w526-h296-rw" alt="Darshan" class="mx-auto rounded-full w-24 h-24 mb-4" />
+        <h4 class="text-xl font-semibold text-gray-800">Darshan Singh</h4>
+        <p class="text-sm text-green-600">Frontend Developer</p>
+        <p class="mt-2 text-gray-600 text-sm italic">"The UI is sleek, responsive, and simple to use – just how users like it."</p>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_0VX72mmMcquvQRyYHMQ-AMkfwJdf4tsmOg&s" alt="Dimple" class="mx-auto rounded-full w-24 h-24 mb-4" />
+        <h4 class="text-xl font-semibold text-gray-800">Dimple Basera</h4>
+        <p class="text-sm text-green-600">Analytics & AI Integrator</p>
+        <p class="mt-2 text-gray-600 text-sm italic">"I love turning data into actionable insights. SmartSpend is where intelligence meets simplicity."</p>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+        <img src="https://images.stockcake.com/public/2/3/7/23754627-0a14-4855-971d-49de7b8aecfc_large/intense-anime-portrait-stockcake.jpg" alt="Bhanu" class="mx-auto rounded-full w-24 h-24 mb-4" />
+        <h4 class="text-xl font-semibold text-gray-800">Bhanu Bhaskar</h4>
+        <p class="text-sm text-green-600">UI Designer & Tester</p>
+        <p class="mt-2 text-gray-600 text-sm italic">"Designing with empathy ensures SmartSpend remains intuitive and elegant."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-200 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+    
+    <!-- Brand Info -->
+    <div>
+      <h4 class="text-2xl font-bold text-white">SmartSpend</h4>
+      <p class="text-sm text-gray-400 mt-2">© 2025 SmartSpend. All rights reserved.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="space-y-2">
+      <!-- <a href="login.html" class="block text-gray-400 hover:text-white transition">Login</a> -->
+      <a href="expence.html" class="block text-gray-400 hover:text-white transition">Start Tracking</a>
+      <a href="#" class="block text-gray-400 hover:text-white transition">Privacy Policy</a>
+      <a href="#" class="block text-gray-400 hover:text-white transition">Terms & Conditions</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="flex justify-center md:justify-end space-x-4">
+      <!-- Facebook -->
+      <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Facebook">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H8.1v-2.9h2.34V9.41c0-2.32 1.38-3.6 3.5-3.6.7 0 1.47.12 1.47.12v1.62h-1.02c-1 0-1.31.62-1.31 1.26v1.52h2.22l-.36 2.9h-1.86v7.03C18.34 21.2 22 17.06 22 12.07z"/>
+        </svg>
+      </a>
+      <!-- Twitter -->
+      <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.29 4.29 0 001.88-2.37 8.52 8.52 0 01-2.72 1.03 4.26 4.26 0 00-7.26 3.88A12.1 12.1 0 013 5.15a4.26 4.26 0 001.32 5.69 4.22 4.22 0 01-1.93-.53v.05a4.27 4.27 0 003.42 4.18 4.26 4.26 0 01-1.93.07 4.27 4.27 0 003.98 2.96A8.56 8.56 0 013 19.54 12.07 12.07 0 009.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.36-.01-.54A8.3 8.3 0 0022.46 6z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Instagram">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.88a.88.88 0 110 1.75.88.88 0 010-1.75z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- 👇 Chatbot Button -->
+<button id="chatbotToggle" class="fixed bottom-6 right-6 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 z-50">
+  💬
+</button>
+
+<!-- 👇 Chatbot Interface -->
+<div id="chatbot" class="fixed bottom-20 right-6 w-80 bg-white border border-gray-300 rounded-lg shadow-lg hidden z-50">
+  <div class="bg-green-600 text-white p-3 font-bold rounded-t-lg">SmartBot</div>
+  <div id="chatContent" class="p-3 h-64 overflow-y-auto text-sm"></div>
+  <div class="flex border-t">
+    <input type="text" id="chatInput" placeholder="Ask something..." class="flex-grow p-2 text-sm border-none outline-none">
+    <button id="sendBtn" class="bg-green-600 text-white px-3">▶</button>
+  </div>
+</div>
+
+<!-- 👇 Chatbot Script -->
+<script>
+  const chatbot = document.getElementById('chatbot');
+  const toggleBtn = document.getElementById('chatbotToggle');
+  const sendBtn = document.getElementById('sendBtn');
+  const chatInput = document.getElementById('chatInput');
+  const chatContent = document.getElementById('chatContent');
+
+  toggleBtn.addEventListener('click', () => {
+    chatbot.classList.toggle('hidden');
+  });
+
+  sendBtn.addEventListener('click', async () => {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    chatContent.innerHTML += `<div class="my-1"><strong>You:</strong> ${msg}</div>`;
+    chatInput.value = '';
+
+    try {
+      const res = await fetch('http://localhost:3000/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+
+      const data = await res.json();
+      chatContent.innerHTML += `<div class="my-1 text-green-700"><strong>Bot:</strong> ${data.reply}</div>`;
+    } catch (err) {
+      chatContent.innerHTML += `<div class="my-1 text-red-600"><strong>Error:</strong> Could not connect to bot.</div>`;
+    }
+
+    chatContent.scrollTop = chatContent.scrollHeight;
+  });
+</script>
+
+</body>
+
+</html>
