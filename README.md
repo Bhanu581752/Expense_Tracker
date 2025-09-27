@@ -18,3 +18,23 @@
 1. Clone the repo:  
    ```bash
    git clone https://github.com/dimpal184/SmartSpend.git
+2.Navigate to the project folder:
+
+cd SmartSpend
+
+
+Install dependencies (if any) and set up your database.
+
+Run the project on your local server.
+
+3.Usage
+
+1.Open the project in your browser.
+
+2.Sign up or log in.
+
+3.Start adding and managing your expenses.
+
+4Contributing
+
+Contributions are welcome! Please fork the repository
