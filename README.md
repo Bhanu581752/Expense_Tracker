@@ -17,4 +17,4 @@
 ## Get Started
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/your-username/SmartSpend.git
+   git clone https://github.com/dimpal184/SmartSpend.git
